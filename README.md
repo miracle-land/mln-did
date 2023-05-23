@@ -1,14 +1,14 @@
-# did:sol
+# did:mln
 
-Welcome to the `did:sol` Method monorepo.
+Welcome to the `did:mln` Method monorepo.
 
-Solana is a high-speed, low-fee public ledger based on a novel Proof-of-History consensus network.
-The SOL DID method is a method for storing DIDs and managing DID documents on Solana.
+Miraland is a high-speed, low-fee public ledger based on a novel Proof-of-History consensus network.
+The SOL DID method is a method for storing DIDs and managing DID documents on Miraland.
 
 This repository contains:
 
-- The [did:sol Method spec](https://identity-com.github.io/sol-did/did-method-spec.html)
-- The [did:sol solana program](/sol-did/programs/sol-did)
+- The [did:mln Method spec](https://identity-com.github.io/sol-did/did-method-spec.html)
+- The [did:mln miraland program](/sol-did/programs/sol-did)
 - An [auto-generated IDL](/sol-did/client/packages/idl) for supporting anchor program interfacing to the on-chain program
 - A [Typescript client](/sol-did/client/packages/core) for creating, updating, resolving and deleting SOL DIDs
 - A [CLI](/sol-did/client/packages/cli) for creating, updating, resolving and deleting SOL DIDs via the CLI

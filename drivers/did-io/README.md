@@ -24,6 +24,6 @@ const did = await resolver.generate({
 })
 ```
 
-where PAYER_KEY is the private key of the transaction payer on solana
+where PAYER_KEY is the private key of the transaction payer on miraland
 and OWNER_KEY is the public key of the owner of the DID,
 both encrypted as base58 strings.

@@ -4,7 +4,7 @@ import {
 } from '../src/util';
 import { expect } from 'chai';
 import { Ed25519VerificationKey2020 } from '@digitalbazaar/ed25519-verification-key-2020';
-import { Keypair } from '@solana/web3.js';
+import { Keypair } from '@miraland/web3.js';
 
 describe('util', () => {
   context('publicKeyBase58ToCryptoLD', () => {

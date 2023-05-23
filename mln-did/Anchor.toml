@@ -1,0 +1,31 @@
+[workspace]
+types = "client/packages/idl/src/"
+
+[features]
+seeds = false
+[programs.localnet]
+mln_did = "didso1Dpqpm4CsiCjzP766BGY89CAdD6ZBL68cRhFPc"
+example = "exCJEJeiWNbq13aZaaYVyeWXQ5hjj3r6fn4GtceoR9f"
+[programs.devnet]
+mln_did = "didso1Dpqpm4CsiCjzP766BGY89CAdD6ZBL68cRhFPc"
+[programs.mainnet]
+mln_did = "didso1Dpqpm4CsiCjzP766BGY89CAdD6ZBL68cRhFPc"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "./tests/fixtures/keypairs/A2oYuurjzc8ACwQQN56SBLv1kUmYJJTBjwMNWVNgVaT3.json"
+
+#[provider]
+#cluster = "devnet"
+#wallet = "SET UPGRADE AUTHORITY WALLET PATH"
+
+#[provider]
+#cluster = "mainnet"
+#wallet = "SET UPGRADE AUTHORITY WALLET PATH"
+
+[scripts]
+createTestFixtureAccount = "./node_modules/.bin/ts-node ./scripts/createTestFixtureAccount"
+clientDemo = "./node_modules/.bin/ts-node ./scripts/clientDemo"

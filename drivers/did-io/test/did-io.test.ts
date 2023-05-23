@@ -1,7 +1,7 @@
 import { CachedResolver } from '@digitalbazaar/did-io';
 import didKey from '@digitalbazaar/did-method-key';
 import didSol, { Driver } from '../src/';
-import { Connection, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { Connection, Keypair, LAMPORTS_PER_SOL } from '@miraland/web3.js';
 import { ClusterType, SolanaUtil } from '@identity.com/sol-did-client-legacy';
 
 const cluster = ClusterType.devnet();
@@ -9,13 +9,13 @@ const resolver = new CachedResolver();
 
 const generateKey = () => {
   const keyPair = Keypair.generate();
-  const did = `did:sol:devnet:${keyPair.publicKey.toBase58()}`;
+  const did = `did:mln:devnet:${keyPair.publicKey.toBase58()}`;
   const methodId = `${did}#default`;
 
   return { keyPair, did, methodId };
 };
 
-// Creates a DID on Solana Devnet
+// Creates a DID on Miraland Devnet
 describe('did-io integration', () => {
   let didSolDriver: Driver;
 

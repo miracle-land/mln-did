@@ -1,6 +1,6 @@
 const { DIDs } = require('./dist');
 const { ClusterType, SolanaUtil } = require('@identity.com/sol-did-client');
-const { Keypair, Connection} = require('@solana/web3.js');
+const { Keypair, Connection} = require('@miraland/web3.js');
 
 const clusterName = 'devnet';
 const cluster = ClusterType.parse(clusterName);

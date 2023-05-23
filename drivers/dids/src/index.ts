@@ -5,7 +5,7 @@ import {
 } from '@identity.com/sol-did-client-legacy';
 import DIDKey from 'did-method-key';
 import * as DIDSol from '@identity.com/sol-did-client-legacy';
-import { Cluster, PublicKey } from '@solana/web3.js';
+import { Cluster, PublicKey } from '@miraland/web3.js';
 import { normalizeDidKeyDocument, publicKeyBase58ToCryptoLD } from './util';
 import { DIDDocument } from 'did-resolver';
 
@@ -63,7 +63,7 @@ export class DIDs {
   async get(identifier: string): Promise<DIDDocument> {
     if (identifier.startsWith('did:key:')) {
       return didKey.get({ did: identifier }).then(normalizeDidKeyDocument);
-    } else if (identifier.startsWith('did:sol:')) {
+    } else if (identifier.startsWith('did:mln:')) {
       return DIDSol.resolve(identifier);
     }
 

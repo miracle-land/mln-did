@@ -1,17 +1,17 @@
-# DIDS (Decentralized Identity library for Solana)
+# DIDS (Decentralized Identity library for Miraland)
 
-This library is a simple client library for generating DIDs for use with Solana applications.
+This library is a simple client library for generating DIDs for use with Miraland applications.
 
 It supports two DID methods:
 
 - [did-key](https://w3c-ccg.github.io/did-method-key/): A static DID method based on 
-X25519 ECC Curve keys, that are compatible with Solana public keys.
-- [did-sol](https://identity-com.github.io/sol-did/did-method-spec.html): A Solana-native
+X25519 ECC Curve keys, that are compatible with Miraland public keys.
+- [did-sol](https://identity-com.github.io/sol-did/did-method-spec.html): A Miraland-native
 DID method.
   
 # Quick Start
 
-To register a DID from a Solana public key:
+To register a DID from a Miraland public key:
 
 ```js
 const DIDs = require('@identity.com/dids');

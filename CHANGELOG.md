@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated `updateFromDoc` to expect a generalized `DidDocument` and not a `DidSolDocument`
 - Updated `anchor-lang` dependency to `0.26.0`
-- Updated program Solana dependencies to latest version.
+- Updated program Miraland dependencies to latest version.
 
 ### Deprecated
 
@@ -53,7 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 
 ### Removed
-- Removed legacy codebase (did:sol v1) from repository.
+- Removed legacy codebase (did:mln v1) from repository.
 
 ### Fixed
 
@@ -110,4 +110,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [3.0.0] - 2022-08-01
-Initial release for the anchor rewrite and feature extended `did:sol method`
+Initial release for the anchor rewrite and feature extended `did:mln method`

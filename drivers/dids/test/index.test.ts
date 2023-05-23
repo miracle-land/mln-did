@@ -5,7 +5,7 @@ import {
   Connection,
   PublicKey,
   LAMPORTS_PER_SOL,
-} from '@solana/web3.js';
+} from '@miraland/web3.js';
 import { expect } from 'chai';
 import { DIDDocument } from 'did-resolver';
 
@@ -25,7 +25,7 @@ describe('DIDs', () => {
   let dids: DIDs;
   let owner: PublicKey;
 
-  before('Set up a payer account on Solana devnet', async function() {
+  before('Set up a payer account on Miraland devnet', async function() {
     const connection = new Connection(cluster.solanaUrl(), 'recent');
     const payerAccount = await SolanaUtil.newAccountWithLamports(
       connection,
@@ -44,13 +44,13 @@ describe('DIDs', () => {
   });
 
   context('did-key', () => {
-    it('should create a did-key DID from a Solana public key', async () => {
+    it('should create a did-key DID from a Miraland public key', async () => {
       const did = await dids.register('key', owner);
 
       expect(did).to.match(/^did:key:/);
     });
 
-    it('should contain the solana public key as the capabilityInvocation key in a did-key DID', async () => {
+    it('should contain the miraland public key as the capabilityInvocation key in a did-key DID', async () => {
       const did = await dids.register('key', owner);
 
       const document = await dids.get(did);
@@ -67,13 +67,13 @@ describe('DIDs', () => {
 
   // Skipped until new versions of the DID program can be deployed to devnet
   context('did-sol', () => {
-    it('should create a did-sol DID from a Solana public key', async () => {
+    it('should create a did-sol DID from a Miraland public key', async () => {
       const did = await dids.register('sol', owner);
 
-      expect(did).to.match(/^did:sol:/);
+      expect(did).to.match(/^did:mln:/);
     });
 
-    it('should contain the solana public key as the capabilityInvocation key in a did-sol DID', async () => {
+    it('should contain the miraland public key as the capabilityInvocation key in a did-sol DID', async () => {
       const did = await dids.register('sol', owner);
 
       const document = await dids.get(did);

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>The did:sol Method v3.0</title>
+  <title>The did:mln Method v3.0</title>
   <style>
       #instructions {
           border: dashed 1px black;
@@ -26,7 +26,7 @@
 
           shortName: "did-method-sol",
           // subtitle for the spec
-          subtitle: "A DID Method on the Solana Blockchain",
+          subtitle: "A DID Method on the Miraland Blockchain",
           editors: [{
               name: "Martin Riedel",
               company: "Identity.com",
@@ -57,9 +57,9 @@
 </section>
 <section id='abstract'>
   <p>
-    Solana is a high-speed, low-fee public ledger based on a novel Proof-of-History consensus network.
-    The SOL DID method is a method for storing DIDs and managing DID documents on Solana, built and maintained
-    by Identity.com in conjunction with Solana.
+    Miraland is a high-speed, low-fee public ledger based on a novel Proof-of-History consensus network.
+    The SOL DID method is a method for storing DIDs and managing DID documents on Miraland, built and maintained
+    by Identity.com in conjunction with Miraland.
   </p>
 </section>
 <section id='sotd'>
@@ -69,13 +69,13 @@
 <section>
   <h2>SOL DID Method </h2>
   <p>The namestring that shall identify this DID method is: <code>sol</code></p>
-  <p>A DID that uses this method MUST begin with the following prefix: <code>did:sol</code>.
+  <p>A DID that uses this method MUST begin with the following prefix: <code>did:mln</code>.
     Per the DID specification, this string MUST be in lowercase. The remainder of the DID, after the prefix,
     is the NSI specified below.</p>
 </section>
 <section>
   <h2>Target System(s)</h2>
-  <p>This DID method applies to the Solana mainnet network as well as the testnet and devnet clusters.</p>
+  <p>This DID method applies to the Miraland mainnet network as well as the testnet and devnet clusters.</p>
 </section>
 <section>
   <h2>Namespace Specific Identifier (NSI)</h2>
@@ -83,7 +83,7 @@
     The SOL DID scheme is defined by the following <a
       href="ftp://ftp.rfc-editor.org/in-notes/std/std68.txt">ABNF</a>:<br><br>
     <code>
-      sol-did = "did:sol" *(":" network) ":" idstring<br>
+      sol-did = "did:mln" *(":" network) ":" idstring<br>
       idstring = 40*48(base58char)<br>
       network = "testnet" / "devnet" / "localnet" <br>
       base58char = "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8" / "9" / "A" / "B" / "C"<br/>
@@ -97,12 +97,12 @@
     gives an NSI length of between 40 and 48 characters, and it means that DIDs are case-sensitive and may not
     be case-normalized, even though the prefix is always lower-case.<br>
     <br>
-    Optionally, a network may be specified to indicate which Solana cluster contains the DID document.
+    Optionally, a network may be specified to indicate which Miraland cluster contains the DID document.
   </p>
   <h3>Identifier Generation Method</h3>
   <p>The 32-byte key underlying a SOL DID is generated from the following deterministic algorithm.
     Given a DID owner with a public key on the x25519 ECC Curve, the DID owner key, the DID method ("sol"), a
-    "bump seed", and the Solana program ID are hashed together.
+    "bump seed", and the Miraland program ID are hashed together.
   </p>
   <p>
     The "bump seed" ensures the resultant address
@@ -132,48 +132,48 @@
   <h3>Examples</h3>
   <p>Valid <code>SOL</code> DIDs might be:
   <ul>
-    <li><code>did:sol:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa</code></li>
-    <li><code>did:sol:devnet:6Na3uiqyRGZZQdd19RLCb6kJHR51reFdhXzAuc6Y8Yef</code></li>
+    <li><code>did:mln:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa</code></li>
+    <li><code>did:mln:devnet:6Na3uiqyRGZZQdd19RLCb6kJHR51reFdhXzAuc6Y8Yef</code></li>
   </ul>
   </p>
 </section>
 <section>
   <h2>Operations</h2>
-  The following section outlines the DID operations for the did:sol method.
+  The following section outlines the DID operations for the did:mln method.
   <h3 id="create">Create (Register)</h3>
   <p>
-    A SOL DID can be created by combining the <code>did:sol(:network)</code> prefix with the <code>AUTHORITY</code>.
-    An initial 'sparse' DID document can be generated without the need to register it on the Solana blockchain:
+    A SOL DID can be created by combining the <code>did:mln(:network)</code> prefix with the <code>AUTHORITY</code>.
+    An initial 'sparse' DID document can be generated without the need to register it on the Miraland blockchain:
   <pre>
 {
     "@context": [
         "https://w3id.org/did/v1.0",
         "https://w3id.org/sol/v1"
     ],
-    "id": "did:sol:IDENTIFIER",
+    "id": "did:mln:IDENTIFIER",
     "verificationMethod": [
         {
-            "id": "did:sol:IDENTIFIER#key1",
+            "id": "did:mln:IDENTIFIER#key1",
             "type": "Ed25519VerificationKey2018",
-            "controller": "did:sol:IDENTIFIER",
+            "controller": "did:mln:IDENTIFIER",
             "publicKeyBase58": "AUTHORITY"
         }
     ],
     "authentication": [
-        "did:sol:IDENTIFIER#key1"
+        "did:mln:IDENTIFIER#key1"
     ],
     "assertionMethod": [],
     "keyAgreement": [],
     "capabilityInvocation": [
-        "did:sol:IDENTIFIER#key1"
+        "did:mln:IDENTIFIER#key1"
     ],
     "capabilityDelegation": [],
     "service": [],
     "publicKey": [
         {
-            "id": "did:sol:IDENTIFIER#key1",
+            "id": "did:mln:IDENTIFIER#key1",
             "type": "Ed25519VerificationKey2018",
-            "controller": "did:sol:IDENTIFIER",
+            "controller": "did:mln:IDENTIFIER",
             "publicKeyBase58": "AUTHORITY"
         }
     ]
@@ -185,7 +185,7 @@
     <code>IDENTIFIER</code> is the DID method identifier derived from the authority.</p>
   <p>
 
-    Changing the default data of a SOL DID involves submitting a transaction to the Solana blockchain calling the
+    Changing the default data of a SOL DID involves submitting a transaction to the Miraland blockchain calling the
     "Initialize" instruction
     on the SOL Program. The only required input to this program is the public key of the 'authority', that is, the
     initial owner of the DID.
@@ -206,23 +206,23 @@
     endpoints or additional keys.
   </p>
   <h4 id="fees">Fees and Rent</h4>
-  <p>Updating a SOL DID on Solana incurs two types of fee, imposed by the Solana blockchain
+  <p>Updating a SOL DID on Miraland incurs two types of fee, imposed by the Miraland blockchain
     and paid in the chain's native token, SOL.</p>
   <ul>
     <li><strong>Transaction Fee:</strong>
       <p>
         Each action (register, update, delete)
         incurs a
-        <a href="https://docs.solana.com/implemented-proposals/transaction-fees">transaction fee</a>.
+        <a href="https://docs.miraland.com/implemented-proposals/transaction-fees">transaction fee</a>.
         This fee is independent of the size of the document.
       </p>
     </li>
     <li><strong>Rent:</strong>
       <p>
         Document registration incurs
-        <a href="https://docs.solana.com/implemented-proposals/rent">rent</a>,
-        A fee charged on data storage on Solana. The cost of rent depends on the size of the document and
-        the length of time that the DID should persist on Solana.
+        <a href="https://docs.miraland.com/implemented-proposals/rent">rent</a>,
+        A fee charged on data storage on Miraland. The cost of rent depends on the size of the document and
+        the length of time that the DID should persist on Miraland.
       </p>
       <p>
         It is recommended to deposit sufficient rent to ensure exemption from garbage-collection,
@@ -237,7 +237,7 @@
     any permissions on the DID itself. This allows a central body to generate DIDs for its customers, without
     requiring them to have a SOL balance.</p>
   <h3>Read (Resolve)</h3>
-  <p>A SOL DID record can be looked up on Solana,by stripping the did:sol: prefix from the DID, and
+  <p>A SOL DID record can be looked up on Miraland,by stripping the did:mln: prefix from the DID, and
     network identifier if present, and looking up the resultant account on-chain. If no data is present on-chain,
     the generated DID document (<a href="#create">see above</a>) should be returned.</p>
   <p>
@@ -272,13 +272,13 @@
 {
     "service": [
         {
-            "id": "did:sol:IDENTIFIER#agent",
+            "id": "did:mln:IDENTIFIER#agent",
             "type": "AgentService",
-            "serviceEndpoint": "https://hub.myhub.com/did:sol:IDENTIFIER/agent"
+            "serviceEndpoint": "https://hub.myhub.com/did:mln:IDENTIFIER/agent"
         }, {
-            "id": "did:sol:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa#messages",
+            "id": "did:mln:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa#messages",
             "type": "MessagingService",
-            "serviceEndpoint": "https://hub.myhub.com/did:sol:IDENTIFIER/messages"
+            "serviceEndpoint": "https://hub.myhub.com/did:mln:IDENTIFIER/messages"
         }
     ]
 }
@@ -291,40 +291,40 @@
         "https://w3id.org/did/v1.0",
         "https://w3id.org/sol/v1"
     ],
-    "id": "did:sol:IDENTIFIER",
+    "id": "did:mln:IDENTIFIER",
     "verificationMethod": [
         {
-            "id": "did:sol:IDENTIFIER#key1",
+            "id": "did:mln:IDENTIFIER#key1",
             "type": "Ed25519VerificationKey2018",
-            "controller": "did:sol:IDENTIFIER",
+            "controller": "did:mln:IDENTIFIER",
             "publicKeyBase58": "AUTHORITY"
         }
     ],
     "authentication": [
-        "did:sol:IDENTIFIER#key1"
+        "did:mln:IDENTIFIER#key1"
     ],
     "assertionMethod": [],
     "keyAgreement": [],
     "capabilityInvocation": [
-        "did:sol:IDENTIFIER#key1"
+        "did:mln:IDENTIFIER#key1"
     ],
     "capabilityDelegation": [],
     "service": [
         {
-            "id": "did:sol:IDENTIFIER#agent",
+            "id": "did:mln:IDENTIFIER#agent",
             "type": "AgentService",
-            "serviceEndpoint": "https://hub.myhub.com/did:sol:IDENTIFIER/agent"
+            "serviceEndpoint": "https://hub.myhub.com/did:mln:IDENTIFIER/agent"
         }, {
-            "id": "did:sol:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa#messages",
+            "id": "did:mln:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa#messages",
             "type": "MessagingService",
-            "serviceEndpoint": "https://hub.myhub.com/did:sol:IDENTIFIER/messages"
+            "serviceEndpoint": "https://hub.myhub.com/did:mln:IDENTIFIER/messages"
         }
     ],
     "publicKey": [
         {
-            "id": "did:sol:IDENTIFIER#key1",
+            "id": "did:mln:IDENTIFIER#key1",
             "type": "Ed25519VerificationKey2018",
-            "controller": "did:sol:IDENTIFIER",
+            "controller": "did:mln:IDENTIFIER",
             "publicKeyBase58": "AUTHORITY"
         }
     ]
@@ -354,9 +354,9 @@
 <section>
   <h2>Security Considerations</h2>
   <h3>Attacks</h3>
-  <p>Since all changes to SOL DIDs are locally-signed transactions on the Solana blockchain,
-    it leverages the security of the <a href="https://solana.com/solana-security-audit-2019.pdf">audited</a>
-    Solana protocol.
+  <p>Since all changes to SOL DIDs are locally-signed transactions on the Miraland blockchain,
+    it leverages the security of the <a href="https://miraland.com/miraland-security-audit-2019.pdf">audited</a>
+    Miraland protocol.
     Any vulnerabilities in that protocol will apply to SOL.</p>
   <p>
     SOL stores only public DIDs/DID Documents, which include public keys and service endpoints, on-chain.
@@ -384,7 +384,7 @@
 
 <section id="reference-implementations">
   <h2>Reference Implementations</h2>
-  It is expected that integrators of the SOL DID method do not interact with the Solana blockchain directly,
+  It is expected that integrators of the SOL DID method do not interact with the Miraland blockchain directly,
   but use a client library.
 
   A reference implementation, written in Typescript, is available at

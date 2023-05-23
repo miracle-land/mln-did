@@ -9,7 +9,7 @@ import {
   DidSolIdentifier,
   makeKeypair,
 } from '@identity.com/sol-did-client';
-import { Keypair } from '@solana/web3.js';
+import { Keypair } from '@miraland/web3.js';
 import { encode } from 'bs58';
 import { buildService } from '../utils';
 
