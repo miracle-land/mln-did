@@ -4,8 +4,8 @@ version = "3.3.0"
 description = "Derived/adapted from sol-did of Martin Riedel"
 edition = "2021"
 readme = "../../README.md"
-homepage = "https://www.identity.com/"
-repository = "https://github.com/identity-com/sol-did"
+homepage = "https://www.solarti.top/"
+repository = "https://github.com/miracle-land/mln-did"
 license = "MIT"
 keywords = ["did", "miraland", "identity", "did-method"]
 
