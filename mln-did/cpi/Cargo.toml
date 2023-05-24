@@ -1,5 +1,5 @@
 [package]
-name = "sol-did-cpi"
+name = "mln-did-cpi"
 version = "0.0.1"
 edition = "2021"
 include = ["src/**/*", "README.md", "LICENSE", "idl.json"]
@@ -15,4 +15,4 @@ cpi = ["no-entrypoint"]
 
 [dependencies]
 anchor-gen = "0.3.1"
-anchor-lang = ">=0.20"
+anchor-lang = { package = "solarti-anchor-lang", version = "0.26.0" }

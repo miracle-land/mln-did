@@ -17,4 +17,4 @@ default = []
 
 [dependencies]
 anchor-lang = "0.26.0"
-sol-did-cpi = "0.0.1"
+mln-did-cpi = "0.0.1"

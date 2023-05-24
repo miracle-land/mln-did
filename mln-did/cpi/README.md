@@ -1,4 +1,4 @@
-_# sol-did-cpi
+_# mln-did-cpi
 
 CPI helpers for the Mln-DID program, that manages the [did:mln DID method](https://identity-com.github.io/sol-did/did-method-spec.html) on Miraland. 
 
