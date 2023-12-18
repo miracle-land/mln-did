@@ -272,7 +272,8 @@ impl DidAccount {
     }
 
     pub fn authority_key(&self) -> Pubkey {
-        Pubkey::new(self.initial_verification_method.key_data.as_slice())
+        // Pubkey::new(self.initial_verification_method.key_data.as_slice())
+        Pubkey::try_from(self.initial_verification_method.key_data.as_slice()).unwrap()
     }
 
     /// Returns true if `other` is a valid controller of this DID
@@ -360,7 +361,8 @@ impl DidAccount {
     pub fn set_native_controllers(&mut self, native_controllers: Vec<Pubkey>) -> Result<()> {
         self.native_controllers = native_controllers.into_iter().unique().collect_vec();
 
-        let own_authority = Pubkey::new(&self.initial_verification_method.key_data);
+        // let own_authority = Pubkey::new(&self.initial_verification_method.key_data);
+        let own_authority = Pubkey::try_from(self.initial_verification_method.key_data.as_slice()).unwrap();
 
         require!(
             !self.native_controllers.contains(&own_authority),

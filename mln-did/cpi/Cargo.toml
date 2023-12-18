@@ -15,4 +15,4 @@ cpi = ["no-entrypoint"]
 
 [dependencies]
 anchor-gen = "0.3.1"
-anchor-lang = { package = "solarti-anchor-lang", version = "0.26.0" }
+anchor-lang = { package = "solarti-anchor-lang", version = "0.26.1" }

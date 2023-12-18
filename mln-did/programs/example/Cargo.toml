@@ -16,5 +16,5 @@ cpi = ["no-entrypoint"]
 default = []
 
 [dependencies]
-anchor-lang = "0.26.0"
-mln-did-cpi = "0.0.1"
+anchor-lang = { package = "solarti-anchor-lang", version = "0.26.1" }
+mln-did-cpi = { path = "../../cpi", version = "0.0.1" }

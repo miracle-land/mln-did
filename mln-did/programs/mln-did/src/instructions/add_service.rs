@@ -20,7 +20,7 @@ pub fn add_service(
 // TODO: In a way this is doing a "serialize again, after anchor deserialzes the transaction".
 //       Anchor should allow to access the original data, without having to serialize again.
 pub fn signed_message(service: &Service, allow_overwrite: bool) -> Vec<u8> {
-    let mut message = service.try_to_vec().unwrap();
+    let mut message = borsh::to_vec(service).unwrap();
     message.push(u8::from(allow_overwrite));
     message
 }
